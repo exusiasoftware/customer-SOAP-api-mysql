@@ -47,7 +47,7 @@ Compile code run:
 
 ````
 docker inspect mysqltest | grep IPAddress
-export MYSQL_DB_HOST="localhost"
+export MYSQL_DB_HOST=IPAddress
 mvn clean install
 (Be sure MYSQL is running)
 
