@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.exusiasoftware.customerapi.entities.Customer;
 import com.exusiasoftware.customerapi.repos.CustomerRepository;
 
@@ -40,5 +39,14 @@ public class CustomerWsImpl implements CustomerWs {
 		
 		return customerRepo.save(customer);
 	}
+
+	@Override
+	public void deleteCustomer(Customer customer) {
+		customerRepo.delete(customer);
+		
+	}
+
+
+	
 
 }

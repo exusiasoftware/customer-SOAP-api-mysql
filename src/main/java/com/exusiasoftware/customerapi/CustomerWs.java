@@ -22,6 +22,9 @@ public interface CustomerWs {
 	@WebMethod
 	Customer updateCustomer(Customer customer);
 	
+	@WebMethod
+	void deleteCustomer(Customer customer);
+	
 	
 
 }
