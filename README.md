@@ -68,7 +68,7 @@ docker build -t customer-api-soap-mysql:xxx .
 Create a docker container from image: 
 
 ````
-docker run -d -p 8080:8080 --name customer-api-soap-mysql customer-api-soap-mysql:xxx
+docker run -d -p 8080:8080 -e "MYSQL_DB_HOST=IPAddress" --name customer-api-soap-mysql customer-api-soap-mysql:xxx
 ````
 
 
