@@ -25,10 +25,29 @@ http://localhost:8080/customer-api-SOAP-mysql or http://localhost/customer-api-S
 
 ````
 
+Create a Docker image for MYSQL:
+
+````
+docker build -t mysqlserver:1 -f Dockerfile_MYSQL .
+````
+
+Launch a MYSQL deployment:
+
+``````
+docker run -d -p 3306:3306 --name mysqltest mysqlserver:1
+``````
+
+Seed the database:
+
+``````
+docker exec -i mysqltest sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < customer.sql
+``````
 
 Compile code run:
 
 ````
+docker inspect mysqltest | grep IPAddress
+export MYSQL_DB_HOST="localhost"
 mvn clean install
 (Be sure MYSQL is running)
 
@@ -51,24 +70,6 @@ Create a docker container from image:
 ````
 docker run -d -p 8080:8080 --name customer-api-soap-mysql customer-api-soap-mysql:xxx
 ````
-
-Create a Docker image for MYSQL:
-
-````
-docker build -t mysqlserver:1 -f Dockerfile_MYSQL .
-````
-
-Launch a MYSQL deployment:
-
-``````
-docker run -d -p 3306:3306 --name mysqltest mysqlserver:1
-``````
-
-Seed the database:
-
-``````
-docker exec -i mysqltest sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < customer.sql
-``````
 
 
 Create a Kubernetes Deployment:
