@@ -30,23 +30,26 @@ Compile code run:
 
 ````
 mvn clean install
+(Be sure MYSQL is running)
+
 ````
 
 Run the application on workstation:
 
 ````
-java -jar customer-api-SOAP-mysql.xxx.jar
+java -jar target/customer-api-SOAP-mysql-1.0.0.jar
+
 ````
 
 Create a Docker image:
 
 ````
-docker build -t customer-api-SOAP-mysql:xxx .
+docker build -t customer-api-soap-mysql:xxx .
 ````
 Create a docker container from image: 
 
 ````
-docker run -d -p 8080:8080 --name customer-api-SOAP-mysql customer-api-SOAP-mysql:xxx
+docker run -d -p 8080:8080 --name customer-api-soap-mysql customer-api-soap-mysql:xxx
 ````
 
 Create a Docker image for MYSQL:
@@ -95,21 +98,19 @@ For the Initial WSDL:
 ![soap1.png](img/soap1.png)
 ![soap2.png](img/soap2.png)
 
-
-
 ````
 
 Get all Customers:
 
 ````
 ![soap_getCustomers.png](img/soap_getCustomers.png)
+
 ````
 
 Get Customer by id:
 
 ````
 ![soap1.png](img/soap_getCustomer.png)
-
 
 ````
 Add a Customer 
@@ -118,20 +119,14 @@ Add a Customer
 
 ![soap_addCustomer.png](img/soap_addCustomer.png)
 
-
-
 ````
 Update a Customer by id
 
 ````
 ![soap_updateCustomer.png](img/soap_updateCustomer.png)
 
-
-
-
 ````
 Delete a Customer by id
-
 
 ````
 ![soap_deleteCustomer.png](img/soap_deleteCustomer.png)
