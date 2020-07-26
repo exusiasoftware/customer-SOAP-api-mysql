@@ -40,7 +40,7 @@ docker run -d -p 3306:3306 --name mysql-server-customer-api mysql-server-custome
 Seed the database:
 
 ``````
-docker exec -i mysql-server-customer-api sh -c 'exec mysql -u root -p "test" < customer.sql
+docker exec -i mysql-server-customer-api sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < customer.sql
 ``````
 
 Compile code run:
