@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-api-soap-service
+spec:
+  selector:
+    app: customer-api-soap
+  ports:
+    - port: 80 # expose the service on internal port 80
+      targetPort: 8080 # app listens on port 8080
+  type: LoadBalancer
+
+  #to remove this: kubectl delete service/customer-api-service

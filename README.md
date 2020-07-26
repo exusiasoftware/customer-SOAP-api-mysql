@@ -73,14 +73,15 @@ docker run -d -p 8080:8080 -e "MYSQL_DB_HOST=IPAddress" --name customer-api-soap
 
 
 Create a Kubernetes Deployment:
+(Be sure to add database IP address to ENV MYSQL_DB_HOST) 
 
 ````
-kubectl create -f customer-api-deployment.yml 
+kubectl create -f customer-api-soap-deployment.yml 
 ````
 Create a Kubernetes Service:
 
 ````
-kubectl create -f loadblancer-customer-api.yml
+kubectl create -f loadblancer-customer-soap-api.yml
 ````
 
 

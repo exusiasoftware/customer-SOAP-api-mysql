@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-api-soap-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: customer-api-soap
+  template:
+    metadata:
+      labels:
+        app: customer-api-soap
+    spec:
+      containers:
+        - name: customersoapapi
+          image: customer-api-soap-mysql:xxx
+          env:
+            - name: MYSQL_DB_HOST
+              value: "127.0.0.1"
+          ports:
+            - containerPort: 8080
+
+
+  #to remove this: kubectl delete deployment customer-api-deployment
