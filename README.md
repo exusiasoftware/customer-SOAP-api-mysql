@@ -40,7 +40,7 @@ docker run -d -p 3306:3306 --name mysqltest mysqlserver:1
 Seed the database:
 
 ``````
-docker exec -i mysqltest sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < customer.sql
+docker exec -i mysqltest sh -c 'exec mysql -u root -p "test" < customer.sql
 ``````
 
 Compile code run:
