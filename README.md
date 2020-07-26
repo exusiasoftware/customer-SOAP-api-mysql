@@ -46,8 +46,7 @@ docker exec -i mysql-server-customer-api sh -c 'exec mysql -uroot -p"$MYSQL_ROOT
 Compile code run:
 
 ````
-docker inspect mysql-server-customer-api  | grep IPAddress
-export MYSQL_DB_HOST=IPAddress
+export MYSQL_DB_HOST=localhost
 mvn clean install
 (Be sure MYSQL is running)
 
@@ -68,6 +67,7 @@ docker build -t customer-api-soap-mysql:xxx .
 Create a docker container from image: 
 
 ````
+docker inspect mysql-server-customer-api  | grep IPAddress
 docker run -d -p 8080:8080 -e "MYSQL_DB_HOST=IPAddress" --name customer-api-soap-mysql customer-api-soap-mysql:xxx
 ````
 
