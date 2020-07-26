@@ -22,4 +22,4 @@ spec:
             - containerPort: 8080
 
 
-  #to remove this: kubectl delete deployment customer-api-deployment
+  #Remove this: kubectl delete deployment customer-api-deployment

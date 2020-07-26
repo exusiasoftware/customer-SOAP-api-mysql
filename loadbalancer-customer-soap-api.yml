@@ -10,4 +10,4 @@ spec:
       targetPort: 8080 # app listens on port 8080
   type: LoadBalancer
 
-  #to remove this: kubectl delete service/customer-api-service
+  #Remove this: kubectl delete service/customer-api-soap-service
